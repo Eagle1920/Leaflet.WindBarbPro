@@ -28,7 +28,10 @@
 
             // If speed is extremely low, return a calm circle
             if (opt.speed < 5) {
-                div.innerHTML = `<svg width="24" height="24" viewBox="0 0 100 100"><circle cx="50" cy="50" r="10" fill="none" stroke="${opt.color}" stroke-width="6"/></svg>`;
+                // MATCH the width/height to opt.iconSize so the anchor works correctly
+                div.innerHTML = `<svg width="${opt.iconSize[0]}" height="${opt.iconSize[1]}" viewBox="0 0 100 100" style="${shadowStr}">
+                    <circle cx="50" cy="50" r="10" fill="none" stroke="${opt.color}" stroke-width="6"/>
+                </svg>`;
                 return div;
             }
 
